@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ProductAPI_V1.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ProductAPI_V1Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProductAPI_V1Context") ?? throw new InvalidOperationException("Connection string 'ProductAPI_V1Context' not found.")));
 
 // Add services to the container.
 
