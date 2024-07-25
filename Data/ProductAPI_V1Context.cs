@@ -15,5 +15,7 @@ namespace ProductAPI_V1.Data
         }
 
         public DbSet<ProductAPI_V1.Models.Product> Product { get; set; } = default!;
+        public DbSet<ProductAPI_V1.Models.Category> Category { get; set; } = default!;
+
     }
 }
